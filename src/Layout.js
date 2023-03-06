@@ -1,12 +1,10 @@
-import ReactQuill from 'react-quill';
+
 import 'react-quill/dist/quill.snow.css';
 // import uuid from 'react-uuid';
 import {React, useEffect, useState} from 'react';
-import { json, Outlet, Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import Notes from './Notes.js';
-import ViewNote from './ViewNote.js';
-import EditingNote from './EditingNote.js';
 import { useNavigate } from 'react-router-dom';
 
 

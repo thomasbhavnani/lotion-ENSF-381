@@ -1,4 +1,3 @@
-import formatDate from './EditingNote.js';
 
 
 export default function Notes( {Title, Date, Content, FormattedDate} ){

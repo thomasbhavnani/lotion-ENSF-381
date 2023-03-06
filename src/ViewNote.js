@@ -1,13 +1,9 @@
-import {ReactQuill, Quill} from 'react-quill';
+
 import 'react-quill/dist/quill.snow.css';
 // import uuid from 'react-uuid';
-import {React, useState} from 'react';
+import {React} from 'react';
 import { json, Link, useOutletContext, useParams, parse, useNavigate } from 'react-router-dom';
-import { v4 as uuid } from 'uuid';
-import Notes from './Notes.js';
-import ViewNotes from './EditingNote.js';
 
-import handleDeleteNote from './Layout.js'
 
 export default function ViewNote(){
     const {id} = useParams()
