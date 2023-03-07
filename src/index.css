@@ -228,6 +228,7 @@ a {
   padding-left:15px;
   font-family: "Lucida Console", "Courier New", monospace;
   border: none;
+  outline:none;
 }
 
 #title-and-time{
