@@ -1,9 +1,11 @@
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 // import uuid from 'react-uuid';
-import {React, useState} from 'react';
-import {useNavigate, useParams,useOutletContext, Link } from 'react-router-dom';
-
+import {React, useState, forceUpdate} from 'react';
+import { json, useNavigate, useParams,useOutletContext, Link } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
+import Notes from './Notes.js';
+import handleAddNote from './Layout.js'
 
 
 
@@ -19,7 +21,7 @@ export default function EditingNote(){
     const [editorValue, setEditorValue] = useState(noteToSave.content);
     
     const handleDeleteNote = () =>{
-        window.alert("Are you sure you want to delete this note?")
+
         const updateNotes = notes.filter(note => note.id !== id)
         console.log(Object.keys(notes).length)
 
@@ -93,7 +95,7 @@ export default function EditingNote(){
                 <label  id = "delete-icon" onClick={handleDeleteNote} >Delete</label>                   
           </div>
       </div>
-      <ReactQuill defaultValue={""} value = {editorValue}  onChange = {(value) => setEditorValue(value)} theme="snow" />
+      <ReactQuill defaultValue={""} placeholder={"Your Note Here"} value = {editorValue}  onChange = {(value) => setEditorValue(value)} theme="snow" />
       
   </div>
         </>

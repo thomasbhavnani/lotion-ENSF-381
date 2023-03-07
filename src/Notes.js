@@ -1,3 +1,4 @@
+import formatDate from './EditingNote.js';
 
 
 export default function Notes( {Title, Date, Content, FormattedDate} ){
@@ -6,7 +7,7 @@ export default function Notes( {Title, Date, Content, FormattedDate} ){
         Content = "..."
     }
     
-    Content = Content.substring(0, 20);
+    Content = Content.substring(0, 70);
     Title = Title.substring(0,20);
 return(
     <>

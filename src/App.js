@@ -15,7 +15,7 @@ function App() {
           path="/viewnote/:id"
           element={<ViewNote />}
         />
-        <Route pathe="/" element = {<Nonote />}/>
+        <Route path="/" element={<Nonote />}/>
         <Route path="/editnote/:id" element={<EditingNote/>} />
       </Route>`
   </Routes>

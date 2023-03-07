@@ -1,11 +1,14 @@
-
+import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 // import uuid from 'react-uuid';
 import {React, useEffect, useState} from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { json, Outlet, Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import Notes from './Notes.js';
+import ViewNote from './ViewNote.js';
+import EditingNote from './EditingNote.js';
 import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -51,10 +54,12 @@ export default function Layout(){
     useEffect(()=>{
         if(notes.length === 0){
              document.getElementById("no-note-yet").style.display = "flex"
+             
 
         }
         else{
             document.getElementById("no-note-yet").style.display = "none"
+            
         }
         
     })
@@ -67,11 +72,15 @@ export default function Layout(){
                 <label id = "spacer"  onClick={Notestoggle}>&#9776;</label>  
             </div>
             <div id = "title">
-                Lotion
+                <div id = "lotion">
+                    Lotion
+                    <div id = "like-notion">
+                    like Notion, but worse
+                    </div>
+                </div>
+                
             </div>
-            <div>
-                like Notion, but worse
-            </div>
+            
             
         </div>
 
@@ -98,7 +107,7 @@ export default function Layout(){
             <Outlet context = {[notes, setNotes]}/>
 
         </div>
-
+        
     </div>
     )
 }

@@ -56,8 +56,22 @@ a {
   font-weight: bold;
   letter-spacing: 2px;
   justify-content:center;
+  flex-direction: column;
 }
 
+#lotion{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#like-notion{
+  display: flex;
+  font-size: 17px;
+  font-weight: normal;
+  padding: 2px;
+}
 
 
 #whole-page{
@@ -166,6 +180,7 @@ a {
   justify-content: center;
   width: 100%;
 }
+
 
 #notes-hover :hover{
   background-color: #a9d0c0;
@@ -306,6 +321,8 @@ a {
 
 #notes-content{
   height:60px;
+  word-wrap: break-word;
+  
 }
 
 #content-view{
@@ -315,4 +332,6 @@ a {
   overflow: auto;
   width:100%;
   height:100%;
+  word-wrap: break-word;
+
 }

@@ -1,9 +1,13 @@
-
+import {ReactQuill, Quill} from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 // import uuid from 'react-uuid';
-import {React} from 'react';
+import {React, useState} from 'react';
 import { json, Link, useOutletContext, useParams, parse, useNavigate } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
+import Notes from './Notes.js';
+import ViewNotes from './EditingNote.js';
 
+import handleDeleteNote from './Layout.js'
 
 export default function ViewNote(){
     const {id} = useParams()
@@ -13,7 +17,7 @@ export default function ViewNote(){
     var filteredNote = notes.filter(notes => notes.id.includes(id));
     
     const handleDeleteNote = () =>{
-        window.alert("Are you sure you want to delete this note?")
+        
         const updateNotes = notes.filter(note => note.id !== id)
         console.log(Object.keys(notes).length)
         
