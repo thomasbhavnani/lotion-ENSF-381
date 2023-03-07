@@ -159,10 +159,12 @@ a {
   padding-top:25px;
 }
 #select-note-or-create{
-  font-size: 20px;
+  display: flex;
+  font-size: 23px;
   font-family: "Lucida Console", "Courier New", monospace;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 #notes-hover :hover{

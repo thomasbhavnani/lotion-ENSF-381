@@ -13,7 +13,7 @@ export default function ViewNote(){
     var filteredNote = notes.filter(notes => notes.id.includes(id));
     
     const handleDeleteNote = () =>{
-        
+        window.alert("Are you sure you want to delete this note?")
         const updateNotes = notes.filter(note => note.id !== id)
         console.log(Object.keys(notes).length)
         

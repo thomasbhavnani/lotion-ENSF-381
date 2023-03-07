@@ -19,7 +19,7 @@ export default function EditingNote(){
     const [editorValue, setEditorValue] = useState(noteToSave.content);
     
     const handleDeleteNote = () =>{
-
+        window.alert("Are you sure you want to delete this note?")
         const updateNotes = notes.filter(note => note.id !== id)
         console.log(Object.keys(notes).length)
 

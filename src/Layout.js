@@ -69,6 +69,9 @@ export default function Layout(){
             <div id = "title">
                 Lotion
             </div>
+            <div>
+                like Notion, but worse
+            </div>
             
         </div>
 

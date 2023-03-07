@@ -2,7 +2,7 @@ import Layout from "./Layout"
 import ViewNote from "./ViewNote"
 import EditingNote from "./EditingNote";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
-
+import Nonote from './Nonote.js'
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
           path="/viewnote/:id"
           element={<ViewNote />}
         />
+        <Route pathe="/" element = {<Nonote />}/>
         <Route path="/editnote/:id" element={<EditingNote/>} />
       </Route>`
   </Routes>
