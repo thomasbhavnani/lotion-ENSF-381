@@ -19,20 +19,22 @@ export default function EditingNote(){
     const [title, setTitle] = useState(noteToSave.title);
     const [date, setDate] = useState(noteToSave.date);
     const [editorValue, setEditorValue] = useState(noteToSave.content);
+
+    
     
     const handleDeleteNote = () =>{
-
+        
+        var ifDelete = window.confirm("Are you sure?")
         const updateNotes = notes.filter(note => note.id !== id)
         console.log(Object.keys(notes).length)
-
+    if(ifDelete){
         if(Object.keys(notes).length === 1){
-
+            
             setNote(
                 updateNotes   
             )
+            
             navigate (`/`, {replace:true})
-            
-            
         }
         else{
             setNote(
@@ -40,10 +42,11 @@ export default function EditingNote(){
             )
             navigate (`/viewnote/${updateNotes[0].id}`, {replace:true})
         }
+    } 
+    else{
         
+    }
         } 
-
-        
     
     
 
@@ -65,6 +68,9 @@ export default function EditingNote(){
             minute: "numeric",
         };
         
+        
+        
+        
         const formatDate = (when) => {
             const formatted = new Date(when).toLocaleString("en-US", options);
             if (formatted === "Invalid Date") {
@@ -84,8 +90,8 @@ export default function EditingNote(){
     <div id = "editor-flex">
       <div id = "editor-title">
           <div id = "title-and-time">
-            <input id = "input-title" type = "text" value = {title} onChange ={(e) => setTitle(e.target.value)} ></input>
-            <input type="datetime-local" id = "time-edit" value = {date} onChange ={(r) => setDate(r.target.value)}/> 
+            <input id = "input-title" type = "text" defaultValue={title} value = {title} onChange ={(e) => setTitle(e.target.value)} ></input>
+            <input type="datetime-local" id = "time-edit"  value = {date} onChange ={(r) => setDate(r.target.value)}/> 
           </div>
           
           <div id = "save-and-delete-labels">

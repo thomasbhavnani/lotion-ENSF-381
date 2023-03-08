@@ -15,12 +15,12 @@ export default function ViewNote(){
     const[notes, setNote] = useOutletContext();
 
     var filteredNote = notes.filter(notes => notes.id.includes(id));
-    
+
     const handleDeleteNote = () =>{
-        
+        var ifDelete = window.confirm("Are you sure?")
         const updateNotes = notes.filter(note => note.id !== id)
         console.log(Object.keys(notes).length)
-        
+    if(ifDelete){
         if(Object.keys(notes).length === 1){
             
             setNote(
@@ -35,10 +35,11 @@ export default function ViewNote(){
             )
             navigate (`/viewnote/${updateNotes[0].id}`, {replace:true})
         }
+    } 
+    else{
         
-        }
-
-        
+    }
+}  
     return(
 
     <div id = "editor-flex">
